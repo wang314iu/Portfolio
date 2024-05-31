@@ -38,8 +38,8 @@ const Skills = () => {
     <div>
       <h3 className="text-xl font-bold">Skills</h3>
       <div>
-        {skills.map(({ title, content }) => (
-          <Paper elevation={3} className="bg-black text-blue-600">
+        {skills.map(({ title, content }, idx) => (
+          <Paper elevation={3} className="bg-black text-blue-600" key={idx}>
             <h4>{title}</h4>
             <p>{content}</p>
           </Paper>
