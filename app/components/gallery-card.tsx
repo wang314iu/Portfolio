@@ -1,37 +1,54 @@
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import Carousel from "./carousel";
 
 const GalleryCard = ({
-  imgUrl,
+  imgUrls,
   title,
-  description,
+  descriptions,
   projectUrl,
   sourceUrl,
   className,
 }: {
-  imgUrl: string;
+  imgUrls: string[];
   title: string;
-  description: string;
-  projectUrl: string;
-  sourceUrl: string;
+  descriptions: string[];
+  projectUrl?: string;
+  sourceUrl?: string;
   className: string;
 }) => {
+  const openUrl = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
-    <Card sx={{ maxWidth: 345 }} className={`place-self-center ${className}`}>
-      <CardMedia component="img" alt="projects" height="120" image={imgUrl} />
-      <CardContent>
-        <h4>{title}</h4>
-        <Typography variant="body2" color="text.secondary">
-          {description}
-        </Typography>
+    <Card
+      style={{
+        backgroundColor: "black",
+        color: "white",
+        boxShadow: "4px 4px 10px green",
+      }}
+      className={`bg-black place-self-center shadow-white ${className} `}
+    >
+      {/* <CardMedia component="img" alt="projects" height="120" image={imgUrl} /> */}
+
+      <Carousel images={imgUrls} descriptions={descriptions} />
+      <CardContent style={{ padding: "8px 12px 0 12px" }}>
+        <h4 className="font-bold">{title}</h4>
       </CardContent>
       <CardActions>
-        <Button size="small">WEBSITE</Button>
-        <Button size="small"> Code</Button>
+        {projectUrl && (
+          <Button size="small" onClick={() => openUrl(projectUrl)}>
+            WEBSITE
+          </Button>
+        )}
+        {sourceUrl && (
+          <Button size="small" onClick={() => openUrl(sourceUrl)}>
+            Code
+          </Button>
+        )}
       </CardActions>
     </Card>
   );
