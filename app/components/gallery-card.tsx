@@ -30,7 +30,7 @@ const GalleryCard = ({
         color: "white",
         boxShadow: "4px 4px 10px green",
       }}
-      className={`bg-black place-self-center ${className} width-full height-full`}
+      className={`bg-black place-self-center ${className} w-full w-full`}
     >
       <Carousel images={imgUrls} descriptions={descriptions} />
       <CardContent style={{ padding: "8px 12px 0 12px" }}>
