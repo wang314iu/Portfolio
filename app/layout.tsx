@@ -19,7 +19,6 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <meta name="metadata.title" content="metadata.description" />
-        {/* <title>Alice Portfolio</title> */}
       </head>
       <body className={`${inter.className} bg-black`}>{children}</body>
     </html>

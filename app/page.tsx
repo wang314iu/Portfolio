@@ -8,7 +8,7 @@ export default function Home() {
   const [showGallery, setShowGallery] = useState(false);
 
   return (
-    <main className="container flex min-h-screen flex-col bg-black text-white mx-auto mb-14">
+    <main className="min-h-screen flex flex-col mb-14 bg-black text-white ">
       <Intro setShowGallery={() => !showGallery && setShowGallery(true)} />
       {/* <Skills /> */}
       {showGallery && <Gallery showGallery={showGallery} />}

@@ -75,11 +75,11 @@ const Gallery = ({ showGallery }: Props) => {
   ];
 
   return (
-    <section className="py-8 px-7 md:px-12">
+    <section className="my-8 mx-auto w-11/12 lg:w-10/12 ">
       <h3 className="text-2xl sm:text-3xl font-semibold py-12 text-center">
         Projects Gallery
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
           <GalleryCard
             key={project.title}

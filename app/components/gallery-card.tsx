@@ -30,10 +30,8 @@ const GalleryCard = ({
         color: "white",
         boxShadow: "4px 4px 10px green",
       }}
-      className={`bg-black place-self-center shadow-white ${className} `}
+      className={`bg-black place-self-center ${className} width-full height-full`}
     >
-      {/* <CardMedia component="img" alt="projects" height="120" image={imgUrl} /> */}
-
       <Carousel images={imgUrls} descriptions={descriptions} />
       <CardContent style={{ padding: "8px 12px 0 12px" }}>
         <h4 className="font-bold">{title}</h4>

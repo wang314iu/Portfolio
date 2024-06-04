@@ -24,69 +24,71 @@ const Intro = ({ setShowGallery }: Props) => {
   return (
     <section
       style={{ backgroundImage: `url("img/cyberDuck.gif")` }}
-      className="text-center sm:text-left px-7 py-8 sm:pt-16 sm:px-12 min-h-[330px]"
+      className="text-center sm:text-left min-h-[330px]"
     >
-      <TypeAnimation
-        sequence={[profileName, 200, () => setShowOverview(true)]}
-        speed={90}
-        cursor={false}
-        repeat={0}
-        style={{
-          textShadow: "2px 2px green",
-        }}
-        className="text-3xl sm:text-5xl font-extrabold font-mono tracking-wider mb-3 mt-6 sm:mt-10 block"
-      />
-      {showOverview && (
+      <div className="mx-auto mt-[80px] w-11/12 lg:w-10/12">
         <TypeAnimation
-          sequence={[
-            intro,
-            200,
-            () => {
-              setShowContact(true);
-              setTimeout(() => setShowGallery(), 800);
-            },
-          ]}
-          splitter={(str) => str.split(/(?= )/)}
-          speed={60}
-          style={{
-            fontSize: "1rem",
-            textShadow: "2px 2px green",
-            whiteSpace: "pre-line",
-          }}
+          sequence={[profileName, 200, () => setShowOverview(true)]}
+          speed={90}
+          cursor={false}
           repeat={0}
+          style={{
+            textShadow: "2px 2px green",
+          }}
+          className="text-3xl sm:text-5xl font-extrabold font-mono tracking-wider mb-3 mt-6 sm:mt-10 block"
         />
-      )}
-      <br />
-      <div
-        className={`${
-          showContact
-            ? "opacity-100 transform scale-100"
-            : "opacity-0 transform scale-80"
-        } transition-all duration-700 ease-in`}
-      >
-        <button
-          onClick={onDownloadResume}
-          className="font-medium m-4 ml-0 text-sm sm:text-ml w-11/12 sm:w-fit px-5 py-1 sm:py-2 rounded-full bg-green-800 hover:bg-black hover:text-emerald-500"
+        {showOverview && (
+          <TypeAnimation
+            sequence={[
+              intro,
+              200,
+              () => {
+                setShowContact(true);
+                setTimeout(() => setShowGallery(), 800);
+              },
+            ]}
+            splitter={(str) => str.split(/(?= )/)}
+            speed={60}
+            style={{
+              fontSize: "1rem",
+              textShadow: "2px 2px green",
+              whiteSpace: "pre-line",
+            }}
+            repeat={0}
+          />
+        )}
+        <br />
+        <div
+          className={`${
+            showContact
+              ? "opacity-100 transform scale-100"
+              : "opacity-0 transform scale-80"
+          } transition-all duration-700 ease-in`}
         >
-          Resume
-        </button>
-        <p className="py-2 text-s text-wrap">
-          <span>
-            Email:&nbsp;
-            <a className="underline" href={`mailTo:${email}`}>
-              {email}
-            </a>
-          </span>
-          &nbsp;|&nbsp;
-          <a
-            className="underline"
-            href={linkedIn}
-            target="_blank"
-            rel="noreferrer"
+          <button
+            onClick={onDownloadResume}
+            className="font-medium m-4 ml-0 text-sm sm:text-ml w-11/12 sm:w-fit px-5 py-1 sm:py-2 rounded-full bg-green-800 hover:bg-black hover:text-emerald-500"
           >
-            LinkedIn
-          </a>
-        </p>
+            Resume
+          </button>
+          <p className="py-2 text-s text-wrap">
+            <span>
+              Email:&nbsp;
+              <a className="underline" href={`mailTo:${email}`}>
+                {email}
+              </a>
+            </span>
+            &nbsp;|&nbsp;
+            <a
+              className="underline"
+              href={linkedIn}
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   );
