@@ -51,11 +51,11 @@ const Gallery = ({ showGallery }: Props) => {
     },
     {
       imgUrls: [
-        "img/portFolio.png",
-        "img/portFolio2.png",
-        "img/portFolio3.png",
-        "img/portFolio4.png",
-        "img/portFolio5.png",
+        "img/portfolio.png",
+        "img/portfolio2.png",
+        "img/portfolio3.png",
+        "img/portfolio4.png",
+        "img/portfolio5.png",
       ],
       title: "Personal Portfolio",
       descriptions: [
