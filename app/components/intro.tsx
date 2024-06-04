@@ -17,6 +17,10 @@ const Intro = ({ setShowGallery }: Props) => {
   const [showContact, setShowContact] = useState(false);
   // const [showNext, setShowNext] = useState(false);
 
+  const onDownloadResume = () => {
+    window.open("Alice_Wang_Resume.pdf", "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section
       style={{ backgroundImage: `url("img/cyberDuck.gif")` }}
@@ -60,7 +64,10 @@ const Intro = ({ setShowGallery }: Props) => {
             : "opacity-0 transform scale-80"
         } transition-all duration-700 ease-in`}
       >
-        <button className="font-medium m-4 ml-0 text-sm sm:text-ml w-11/12 sm:w-fit px-5 py-1 sm:py-2 rounded-full bg-green-800 hover:bg-black hover:text-emerald-500">
+        <button
+          onClick={onDownloadResume}
+          className="font-medium m-4 ml-0 text-sm sm:text-ml w-11/12 sm:w-fit px-5 py-1 sm:py-2 rounded-full bg-green-800 hover:bg-black hover:text-emerald-500"
+        >
           Resume
         </button>
         <p className="py-2 text-s text-wrap">
