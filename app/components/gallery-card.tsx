@@ -25,12 +25,7 @@ const GalleryCard = ({
 
   return (
     <Card
-      style={{
-        backgroundColor: "black",
-        color: "white",
-        boxShadow: "4px 4px 10px green",
-      }}
-      className={`bg-black place-self-center ${className} w-full w-full`}
+      className={`text-white bg-black rounded place-self-center ${className} w-full shadow-md shadow-grey-500/50`}
     >
       <Carousel images={imgUrls} descriptions={descriptions} />
       <CardContent style={{ padding: "8px 12px 0 12px" }}>

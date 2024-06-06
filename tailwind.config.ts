@@ -6,7 +6,14 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {},
+  theme: {
+    extend: {
+      padding: {
+        "1/24": "4%",
+        "1/12": "8%",
+      },
+    },
+  },
   plugins: [],
 };
 export default config;

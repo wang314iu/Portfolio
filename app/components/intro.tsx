@@ -9,7 +9,13 @@ interface Props {
 const Intro = ({ setShowGallery }: Props) => {
   const profileName = "Alice Wang";
   const intro = `# Over 5 years of professional experience involving full stages of SDLC for Web Applications.
-  # Expertise in developing web applications with React and Angular. Familiar with MEAN stack. Have profound experience with modern web technologies and terms.`;
+  # Expertise in developing web applications with React and Angular. Familiar with MEAN stack. Have profound experience with modern web technologies and terms.
+  # Proficient working with frameworks Angular, Ionic, Next.js, React, Tailwind, Bootstrap, Material UI, ChakraUI. 
+  # Solid knowledge with web technologies HTTP, Typescript, JavaScript, Jquery, HTML, CSS, Web APIs and JSON. 
+  # Having experience implement backend business logics, APIs and working with MySQL database.
+  # Experienced working with development tools TFS, Git, NPM, Yarn, Jenkins, Docker. Understand Gulp and Webpack.
+  # Experienced working under Agile Scrum and waterfall environment.
+  # Good written and verbal communication and problem-Solving skills.`;
   const email = "wang314iu@gmai.com";
   const linkedIn = "https://linkedin.com/in/alice-wang-9a9304192";
 
@@ -24,9 +30,9 @@ const Intro = ({ setShowGallery }: Props) => {
   return (
     <section
       style={{ backgroundImage: `url("img/cyberDuck.gif")` }}
-      className="text-center sm:text-left min-h-[330px]"
+      className="w-screen h-screen flex items-center text-center sm:text-left bg-repeat"
     >
-      <div className="mx-auto mt-[80px] w-11/12 lg:w-10/12">
+      <div className="m-auto h-content w-11/12 lg:w-10/12">
         <TypeAnimation
           sequence={[profileName, 200, () => setShowOverview(true)]}
           speed={90}
@@ -35,7 +41,7 @@ const Intro = ({ setShowGallery }: Props) => {
           style={{
             textShadow: "2px 2px green",
           }}
-          className="text-3xl sm:text-5xl font-extrabold font-mono tracking-wider mb-3 mt-6 sm:mt-10 block"
+          className="text-3xl sm:text-5xl font-extrabold font-mono tracking-wider mb-5 md:mb-8 block"
         />
         {showOverview && (
           <TypeAnimation
@@ -50,10 +56,11 @@ const Intro = ({ setShowGallery }: Props) => {
             splitter={(str) => str.split(/(?= )/)}
             speed={60}
             style={{
-              fontSize: "1rem",
               textShadow: "2px 2px green",
               whiteSpace: "pre-line",
+              textAlign: "left",
             }}
+            className="text-xs md:text-base xl:text-lg mb-5"
             repeat={0}
           />
         )}
