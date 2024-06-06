@@ -1,88 +1,20 @@
-import GalleryCard from "./gallery-card";
+import GalleryCard from "./galleryCard";
+import { projects } from "../constants";
 
 interface Props {
   showGallery: boolean;
 }
 const Gallery = ({ showGallery }: Props) => {
-  const projects = [
-    {
-      imgUrls: [
-        "img/gamehub.png",
-        "img/gamehub2.jpg",
-        "img/gamehub3.png",
-        "img/gamehub4.png",
-        "img/gamehub5.png",
-        "img/gamehub6.png",
-        "img/gamehub7.png",
-        "img/gamehub8.png",
-      ],
-      title: "Game Hub",
-      descriptions: [
-        "Gamehub navigates you to your favorite games.",
-        "Provides you a light and dark theme.",
-        "Find game you might interest in by genre.",
-        "Search for games by name.",
-        "Filter games by platform.",
-        "Sort games by criteria.",
-        "Check game platforms and rating. Click on the card to see more details.",
-        "Display game details and useful links.",
-      ],
-      projectUrl: "https://alice-game-hub.vercel.app/",
-      sourceUrl: "https://github.com/wang314iu/GameHub",
-    },
-    {
-      imgUrls: [
-        "img/socialVideoPlatform.png",
-        "img/socialVideoPlatform2.png",
-        "img/socialVideoPlatform5.png",
-        "img/socialVideoPlatform3.png",
-        "img/socialVideoPlatform4.png",
-      ],
-      title: "Social Video Platform",
-      descriptions: [
-        "See videos shared by people across the world.",
-        "Filter by keywords your are interested in.",
-        "Put your mouse over the video to watch it.",
-        "Find out the author of the video and how other people feel about it!",
-        "See the comments of the video.",
-      ],
-      projectUrl: "https://social-video-platform-zeta.vercel.app/",
-      sourceUrl: "https://github.com/wang314iu/SocialVideoPlatform",
-    },
-    {
-      imgUrls: [
-        "img/portfolio.png",
-        "img/portfolio2.png",
-        "img/portfolio3.png",
-        "img/portfolio4.png",
-        "img/portfolio5.png",
-      ],
-      title: "Personal Portfolio",
-      descriptions: [
-        "Check out who I am :D",
-        "Find out how to reach out to me.",
-        "My project to showcase my skills.",
-        "Slide to see project snapshots and details.",
-        "Checkout the live demo and source code!",
-      ],
-      sourceUrl: "https://github.com/wang314iu/Portfolio",
-    },
-    {
-      imgUrls: ["img/workInProgress.jpeg"],
-      title: "To be continued...",
-      descriptions: [],
-    },
-  ];
-
   return (
-    <section className="h-full w-full p-[7%] xl:p-[8%] overflow-y-auto ">
+    <section className="h-full w-full py-[6%] px-[7%] md:px-[12%] lg:px-[20%] overflow-y-auto ">
       <h3 className="text-2xl sm:text-3xl font-semibold py-12 text-center">
         Projects
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 xl:gap-10">
+      <div className="grid grid-cols-1 gap-x-8 xl:gap-x-10 gap-y-20 md:gap-y-24 xl:gap-y-40">
         {projects.map((project) => (
           <GalleryCard
             key={project.title}
+            tags={project.tags ?? []}
             imgUrls={project.imgUrls}
             title={project.title}
             descriptions={project.descriptions}

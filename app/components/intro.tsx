@@ -1,24 +1,13 @@
 "use client";
 import { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
+import { email, linkedIn, profileName, intro } from "../constants";
 
 interface Props {
   setShowGallery: () => void;
 }
 
 const Intro = ({ setShowGallery }: Props) => {
-  const profileName = "Alice Wang";
-  const intro = `# Over 5 years of professional experience involving full stages of SDLC for Web Applications.
-  # Expertise in developing web applications with React and Angular. Familiar with MEAN stack. Have profound experience with modern web technologies and terms.
-  # Proficient working with frameworks Angular, Ionic, Next.js, React, Tailwind, Bootstrap, Material UI, ChakraUI. 
-  # Solid knowledge with web technologies HTTP, Typescript, JavaScript, Jquery, HTML, CSS, Web APIs and JSON. 
-  # Having experience implement backend business logics, APIs and working with MySQL database.
-  # Experienced working with development tools TFS, Git, NPM, Yarn, Jenkins, Docker. Understand Gulp and Webpack.
-  # Experienced working under Agile Scrum and waterfall environment.
-  # Good written and verbal communication and problem-Solving skills.`;
-  const email = "wang314iu@gmai.com";
-  const linkedIn = "https://linkedin.com/in/alice-wang-9a9304192";
-
   const [showOverview, setShowOverview] = useState(false);
   const [showContact, setShowContact] = useState(false);
   // const [showNext, setShowNext] = useState(false);

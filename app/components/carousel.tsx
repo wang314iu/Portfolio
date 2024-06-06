@@ -26,11 +26,11 @@ const Carousel = ({ images, descriptions }: Props) => {
   };
 
   return (
-    <div className="max-w-lg  mx-auto relative">
-      <div className="flex items-center justify-center height-[350px] overflow-hidden">
+    <div className="width-full mx-auto relative">
+      <div className="flex items-center justify-center  overflow-hidden">
         <img
           src={images[currentIndex]}
-          alt=""
+          alt="project"
           className="w-full object-cover"
         />
       </div>
