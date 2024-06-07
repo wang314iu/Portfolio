@@ -4,6 +4,7 @@ import TagCloud, { TagCloudOptions } from "@frank-mayer/react-tag-cloud";
 import React, { useState } from "react";
 import { skillTags } from "../constants";
 import SkillDialog from "./skillDialog";
+import { TypeAnimation } from "react-type-animation";
 
 const Skills = () => {
   const [[tag, description], setContent] = useState(["", ""]);
@@ -17,27 +18,38 @@ const Skills = () => {
     setOpen(true);
   };
   return (
-    <div
-      className={`h-full w-full flex items-center bg-gradient-to-r from-green-700 lg:px-[6%] transition-all duration-500 ease-in-out`}
-      style={{ justifyContent: open ? "flex-end" : "center" }}
-    >
+    <>
       <div
-        className={`transition-all duration-1000 ease-out ${
-          open && "scale-90 lg:scale-110"
-        }`}
+        className={`h-full w-full flex flex-col items-center bg-gradient-to-r from-green-700 lg:px-[6%] transition-all duration-500 ease-in-out justify-center`}
       >
-        <TagCloud
-          options={(w: Window & typeof globalThis): TagCloudOptions => ({
-            radius: Math.min(600, w.innerWidth, w.innerHeight) / 2,
-            maxSpeed: "normal",
-            containerClass: "w-fill",
-            itemClass: "hover:cursor-pointer",
-          })}
-          onClick={(tag: string, ev: MouseEvent) => onSelectTag(tag)}
-          onClickOptions={{ passive: true }}
+        <div
+          className={`transition-all duration-1000 ease-out ${
+            open && "scale-90 lg:scale-110"
+          }`}
         >
-          {Object.keys(skillTags)}
-        </TagCloud>
+          <TagCloud
+            options={(w: Window & typeof globalThis): TagCloudOptions => ({
+              radius: Math.min(600, w.innerWidth, w.innerHeight) / 2,
+              maxSpeed: "normal",
+              containerClass: "w-fill",
+              itemClass: "hover:cursor-pointer font-bold tracking-wider",
+            })}
+            onClick={(tag: string, ev: MouseEvent) => onSelectTag(tag)}
+            onClickOptions={{ passive: true }}
+          >
+            {Object.keys(skillTags)}
+          </TagCloud>
+        </div>
+        <TypeAnimation
+          sequence={["Click on a tag to view details", 200]}
+          speed={90}
+          cursor={true}
+          repeat={0}
+          style={{
+            textShadow: "2px 2px green",
+          }}
+          className="text-md font-extrabold font-mono tracking-wider self-center lg:self-end mt-6"
+        />
       </div>
       <SkillDialog
         title={tag}
@@ -45,7 +57,7 @@ const Skills = () => {
         handleClose={handleClose}
         content={description.split(",").map((x) => x.trim())}
       />
-    </div>
+    </>
   );
 };
 
