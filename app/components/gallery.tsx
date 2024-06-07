@@ -6,7 +6,7 @@ interface Props {
 }
 const Gallery = ({ showGallery }: Props) => {
   return (
-    <section className="h-full w-full py-[6%] px-[7%] md:px-[12%] lg:px-[20%] overflow-y-auto ">
+    <section className="h-full w-full p-[7%] md:px-[12%] lg:px-[20%] overflow-y-auto">
       <h3 className="text-2xl sm:text-3xl font-semibold font-mono py-12 text-center tracking-wider">
         PROJECTS
       </h3>
