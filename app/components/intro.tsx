@@ -43,7 +43,7 @@ const Intro = ({ setShowGallery }: Props) => {
               },
             ]}
             splitter={(str) => str.split(/(?= )/)}
-            speed={60}
+            speed={90}
             style={{
               textShadow: "2px 2px green",
               whiteSpace: "pre-line",

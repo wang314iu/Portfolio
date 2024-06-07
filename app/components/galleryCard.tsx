@@ -33,7 +33,7 @@ const GalleryCard = ({
     >
       <Carousel images={imgUrls} descriptions={descriptions} />
       <CardContent style={{ padding: "8px 12px 0 12px" }}>
-        <Stack direction="row" spacing={1} className="pb-4 ">
+        <Stack direction="row" spacing={1} className="pb-3 ">
           {tags.map((tag) => (
             <Chip
               size="small"

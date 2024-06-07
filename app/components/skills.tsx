@@ -1,88 +1,55 @@
+"use client";
+
 import TagCloud, { TagCloudOptions } from "@frank-mayer/react-tag-cloud";
+import React, { useState } from "react";
+import { skillTags } from "../constants";
+import SkillDialog from "./skillDialog";
 
 const Skills = () => {
-  const skills: {
-    title: string;
-    content: string;
-  }[] = [
-    {
-      title: "Web Technologies",
-      content:
-        "HTML5, CSS3, Sass, Bootstrap, AJAX, jQuery, JSON, Restful API, Node.js, React, Tailwind",
-    },
-    {
-      title: "Frameworks",
-      content:
-        "Angular, React, Next.js, Express.js, Tailwind, Bootstrap, Material UI, ChakraUI",
-    },
-    {
-      title: "Databases",
-      content: "MySQL, MongoDB, AWS S3",
-    },
-    {
-      title: "Programming Languages",
-      content: "Typescript, JavaScript, Java, C#, C++, Python, Golang, SQL",
-    },
-    {
-      title: "Testing/Debugging",
-      content:
-        "Jest, Mocha, Jasmine, Karma, Postman, Fiddler, Chrome Developer Tools, React Developer Tools, Augury",
-    },
-    {
-      title: "Version Control",
-      content: "Git, TFS",
-    },
-    {
-      title: "Others",
-      content:
-        "NPM, WebPack,Babel, Gulp, XML, Docker, Mysql Workbench, Redux, RxJS, Lodash, Nginx",
-    },
-  ];
+  const [[tag, description], setContent] = useState(["", ""]);
+  const [open, setOpen] = React.useState(false);
 
-  const skill: { [key: string]: string } = {
-    TypeScript: "",
-    Javascript: "",
-    React: "",
-    "Next.js": "",
-    Angular: "",
-    Ionic: "",
-    Agile: "",
-    Responsive: "",
-    Node: "",
-    "UI/UX": "",
-    HTML: "",
-    CSS: "",
-    Tailwind: "",
-    Bootstrap: "",
-    "Material UI": "",
-    Jest: "",
-    Redux: "",
-    Rxjs: "",
-    ChakraUI: "",
-    Database: "",
-    Accessability: "",
+  const handleClickOpen = () => {
+    setOpen(true);
   };
 
-  const onSelectStyle = (key: string) => {
-    const content = skill[key];
-    alert(content);
+  const handleClose = () => {
+    setOpen(false);
   };
-
+  const onSelectTag = (tag: string) => {
+    setContent([tag, skillTags[tag]]);
+    setOpen(true);
+  };
   return (
-    <div className="h-screen w-screen flex flex-row items-center bg-gradient-to-r from-green-700 px-1/24 lg:px-1/12">
-      <TagCloud
-        options={(w: Window & typeof globalThis): TagCloudOptions => ({
-          radius: Math.min(500, w.innerWidth, w.innerHeight) / 2,
-          maxSpeed: "normal",
-          containerClass: "m-0",
-          itemClass: "hover:cursor-pointer",
-        })}
-        onClick={(tag: string, ev: MouseEvent) => onSelectStyle(tag)}
-        onClickOptions={{ passive: true }}
+    <div
+      className={`h-full w-full flex items-center ${
+        open ? "justify-end" : "justify-center"
+      } bg-gradient-to-r from-green-700 lg:px-[6%] `}
+    >
+      <div
+        className={`transition-all duration-1000 ease-out ${
+          open && "scale-75"
+        }`}
       >
-        {Object.keys(skill)}
-      </TagCloud>
-      <div></div>
+        <TagCloud
+          options={(w: Window & typeof globalThis): TagCloudOptions => ({
+            radius: Math.min(600, w.innerWidth, w.innerHeight) / 2,
+            maxSpeed: "normal",
+            containerClass: "w-fill",
+            itemClass: "hover:cursor-pointer",
+          })}
+          onClick={(tag: string, ev: MouseEvent) => onSelectTag(tag)}
+          onClickOptions={{ passive: true }}
+        >
+          {Object.keys(skillTags)}
+        </TagCloud>
+      </div>
+      <SkillDialog
+        title={tag}
+        open={open}
+        handleClose={handleClose}
+        content={description.split(",").map((x) => x.trim())}
+      />
     </div>
   );
 };

@@ -14,7 +14,7 @@ const TopNav = ({ currentSection, scrollToSection }: Props) => {
     >
       <Breadcrumbs aria-label="breadcrumb" className="text-white">
         <Button
-          className={` ${
+          className={`font-semibold ${
             currentSection === "intro" && "text-green-600"
           } hover:text-green-600`}
           color="inherit"
@@ -23,7 +23,7 @@ const TopNav = ({ currentSection, scrollToSection }: Props) => {
           Intro
         </Button>
         <Button
-          className={`${
+          className={`font-semibold ${
             currentSection === "skills" && "text-green-600"
           } hover:text-green-600`}
           color="inherit"
@@ -33,7 +33,7 @@ const TopNav = ({ currentSection, scrollToSection }: Props) => {
           Skills
         </Button>
         <Button
-          className={`${
+          className={`font-semibold ${
             currentSection === "projects" && "text-green-600"
           } hover:text-green-600`}
           color="inherit"
