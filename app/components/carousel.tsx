@@ -11,36 +11,48 @@ interface Props {
 }
 const Carousel = ({ images, descriptions }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isSliding, setIsSliding] = useState(false);
+  const img = (
+    <img
+      src={images[currentIndex]}
+      alt="project"
+      className="w-full object-cover transition-transform duration-500 ease-in-out"
+    />
+  );
+  const changeSlide = (newIndex: number) => {
+    setIsSliding(true);
+    setTimeout(() => {
+      setCurrentIndex(newIndex);
+      setIsSliding(false);
+    }, 0); // duration of the slide effect
+  };
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
+    changeSlide(newIndex);
   };
 
   const nextSlide = () => {
     const isLastSlide = currentIndex === images.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
+    changeSlide(newIndex);
   };
 
   return (
     <div className="width-full mx-auto relative">
       <div className="flex items-center justify-center overflow-hidden">
-        <img
-          src={images[currentIndex]}
-          alt="project"
-          className="w-full object-cover"
-        />
+        {img}
       </div>
+      {/* slide buttons */}
       <div className="absolute top-1/2 left-2 transform -translate-y-1/2">
         <IconButton
           onClick={prevSlide}
           disabled={currentIndex === 0}
-          size="medium"
+          className="text-[24px] lg:text-[36px]"
         >
           <IoIosArrowDropleftCircle
-            style={{ color: currentIndex === 0 ? "transparent" : "lightgray" }}
+            style={{ color: currentIndex === 0 ? "transparent" : "lightgrey" }}
           />
         </IconButton>
       </div>
@@ -48,7 +60,7 @@ const Carousel = ({ images, descriptions }: Props) => {
         <IconButton
           onClick={nextSlide}
           disabled={currentIndex === images.length - 1}
-          size="medium"
+          className="text-[24px] lg:text-[36px]"
         >
           <IoIosArrowDroprightCircle
             style={{

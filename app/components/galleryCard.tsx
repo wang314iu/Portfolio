@@ -32,7 +32,7 @@ const GalleryCard = ({
       className={`text-white bg-black rounded place-self-center ${className} w-full shadow-lg shadow-green-700`}
     >
       <Carousel images={imgUrls} descriptions={descriptions} />
-      <CardContent style={{ padding: "8px 12px 0 12px" }}>
+      <CardContent style={{ padding: "8px 12px 0 12px", minHeight: "75px" }}>
         <Stack direction="row" spacing={1} className="pb-3 ">
           {tags.map((tag) => (
             <Chip
@@ -45,7 +45,7 @@ const GalleryCard = ({
         </Stack>
         <h4 className="font-bold text-xl">{title}</h4>
       </CardContent>
-      <CardActions>
+      <CardActions className="min-h-[50px]">
         {projectUrl && (
           <Button
             size="small"
