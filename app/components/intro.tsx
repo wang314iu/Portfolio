@@ -24,7 +24,7 @@ const Intro = ({ setShowGallery }: Props) => {
       <div className="m-auto h-content w-11/12 lg:w-10/12">
         <TypeAnimation
           sequence={[profileName, 200, () => setShowOverview(true)]}
-          speed={90}
+          speed={80}
           cursor={false}
           repeat={0}
           style={{
