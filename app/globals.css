@@ -47,3 +47,11 @@ body {
 .tagcloud--item:hover {
   color: #36454f;
 }
+
+.MuiDialog-paper {
+  margin: 0;
+}
+
+.MuiDialog-container {
+  justify-content: flex-start;
+}
