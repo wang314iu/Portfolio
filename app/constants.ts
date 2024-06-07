@@ -29,7 +29,7 @@ const projects = [
       "img/gamehub5.png",
       "img/gamehub6.png",
       "img/gamehub7.png",
-      // "img/gamehub8.png",
+      "img/gamehub8.png",
     ],
     descriptions: [
       "Gamehub navigates you to your favorite games.",
@@ -39,7 +39,7 @@ const projects = [
       "Filter games by platform.",
       "Sort games by criteria.",
       "Check game platforms and rating. Click on the card to see more details.",
-      // "Display game details and useful links.",
+      "Display game details and useful links.",
     ],
     projectUrl: "https://alice-game-hub.vercel.app/",
     sourceUrl: "https://github.com/wang314iu/GameHub",
