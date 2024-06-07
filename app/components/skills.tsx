@@ -9,10 +9,6 @@ const Skills = () => {
   const [[tag, description], setContent] = useState(["", ""]);
   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
   const handleClose = () => {
     setOpen(false);
   };
@@ -22,13 +18,12 @@ const Skills = () => {
   };
   return (
     <div
-      className={`h-full w-full flex items-center ${
-        open ? "justify-end" : "justify-center"
-      } bg-gradient-to-r from-green-700 lg:px-[6%] `}
+      className={`h-full w-full flex items-center bg-gradient-to-r from-green-700 lg:px-[6%] transition-all duration-500 ease-in-out`}
+      style={{ justifyContent: open ? "flex-end" : "center" }}
     >
       <div
         className={`transition-all duration-1000 ease-out ${
-          open && "scale-75"
+          open && "scale-90 lg:scale-110"
         }`}
       >
         <TagCloud

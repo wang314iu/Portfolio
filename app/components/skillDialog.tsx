@@ -5,15 +5,6 @@ import { rates } from "../constants";
 import { IconButton, Slide, Drawer } from "@mui/material";
 import { IoMdClose } from "react-icons/io";
 
-const Transition = React.forwardRef(function Transition(
-  props: TransitionProps & {
-    children: React.ReactElement<any, any>;
-  },
-  ref: React.Ref<unknown>
-) {
-  return <Slide direction="left" ref={ref} {...props} />;
-});
-
 interface Props {
   handleClose: () => void;
   open: boolean;
@@ -24,7 +15,7 @@ interface Props {
 const SkillDialog = ({ open, handleClose, content, title }: Props) => {
   return (
     <Drawer open={open} onClose={handleClose}>
-      <div className="min-w-[300px] md:min-w-[350px] h-full py-8 px-6 bg-black text-white">
+      <div className="min-w-[300px] md:min-w-[40vw] h-full py-8 px-6 bg-black text-white">
         <IconButton
           aria-label="close"
           onClick={handleClose}

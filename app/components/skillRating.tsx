@@ -12,7 +12,7 @@ const SkillRating = ({ rating }: { rating: number }) => {
     <div className="w-full h-[12px] bg-transparent ">
       <div
         className="transition-all duration-500 ease-out h-full bg-gradient-to-r from-green-700 to-green-300"
-        style={{ width: show ? `${rating}%` : "1%" }}
+        style={{ width: show ? `${rating}%` : "0%" }}
       ></div>
     </div>
   );

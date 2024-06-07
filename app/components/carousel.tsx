@@ -4,7 +4,6 @@ import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
-import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
 interface Props {
   images: string[];
@@ -27,7 +26,7 @@ const Carousel = ({ images, descriptions }: Props) => {
 
   return (
     <div className="width-full mx-auto relative">
-      <div className="flex items-center justify-center  overflow-hidden">
+      <div className="flex items-center justify-center overflow-hidden">
         <img
           src={images[currentIndex]}
           alt="project"
