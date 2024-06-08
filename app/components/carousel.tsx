@@ -82,7 +82,7 @@ const Carousel = ({ images, descriptions }: Props) => {
           />
         ))}
       </div>
-      <div style={{ minHeight: "45px", padding: "10px 10px 0 10px" }}>
+      <div style={{ minHeight: "50px", padding: "10px 10px 0 10px" }}>
         {descriptions.length > 0 && (
           <Typography
             variant="body2"
